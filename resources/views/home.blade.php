@@ -17,7 +17,7 @@
 @section('content')
     <!-- Page Content -->
     <div class="content">
-        @include('flash::message')
+        {{--@include('flash::message')--}}
         <div class="row js-appear-enabled animated fadeIn" data-toggle="appear">
             <!-- Row #1 -->
             <div class="col-6 col-xl-3">
