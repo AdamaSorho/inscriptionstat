@@ -11,7 +11,7 @@
 @endsection
 
 @section("title")
-    {{ $titre }}
+    Statistique de l'art oratoire
 @endsection
 
 @section('content')
@@ -146,7 +146,7 @@
         <!-- <p>Content has a max-width set, so on larger screens, the content is boxed (screen width greater than 991px).</p> -->
         <div class="block" id="payesTable">
             <div class="block-header block-header-default">
-                <h3 class="block-title" id="titrePaye">{{$titre}}</h3>
+                <h3 class="block-title" id="titrePaye">Liste des candidats ayant payés</h3>
             </div>
             <div class="block-content block-content-full">
                 <!-- DataTables functionality is initialized with .js-dataTable-full-pagination class in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
@@ -211,7 +211,7 @@
         </div>
         <div class="block" id="inscritsTable">
             <div class="block-header block-header-default">
-                <h3 class="block-title" id="titreInscrits"></h3>
+                <h3 class="block-title" id="titreInscrits">Liste des candidats non-payés</h3>
             </div>
             <div class="block-content block-content-full">
                 <!-- DataTables functionality is initialized with .js-dataTable-full-pagination class in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
