@@ -14,10 +14,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    /*public function __construct()
+    public function __construct()
     {
         $this->middleware('auth');
-    }*/
+    }
 
     /**
      * Show the application dashboard.
@@ -42,6 +42,14 @@ class HomeController extends Controller
         $montantFortic = ($montant * 25) / 100;
         $montantTransVie = ($montant * 25) / 100;
 
-        return view('home');
+        return view('home', [
+            "formation" => $formation,
+            "candidatsPayes" => $candidatsPayes,
+            "candidatsInscrits" => $candidatsInscrits,
+            "montant" => $montant,
+            "montantUvci" => $montantUvci,
+            "montantFortic" => $montantFortic,
+            "montantTransVie" => $montantTransVie,
+        ]);
     }
 }
