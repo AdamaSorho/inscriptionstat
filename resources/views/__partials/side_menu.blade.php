@@ -1,6 +1,6 @@
 <div class="content-side content-side-full">
     <ul class="nav-main">
-        <li>
+        {{--<li>
             <a href="{{route('home')}}"><i class="si si-home"></i><span class="sidebar-mini-hide">Accueil</span></a>
         </li>
         <li>
@@ -126,6 +126,6 @@
                 </li> -->
             </ul>
         </li>
-        @endcan
+        @endcan--}}
     </ul>
 </div>
