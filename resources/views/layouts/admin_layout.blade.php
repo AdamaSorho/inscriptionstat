@@ -40,21 +40,15 @@
         <!-- Page Container -->
 
         <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header-fixed main-content-boxed side-trans-enabled sidebar-inverse">
-
-
             <!-- Sidebar -->
-
             <nav id="sidebar">
                 <!-- Sidebar Content -->
                 <div class="sidebar-content">
-
-
                     <!-- Side User -->
                     <div class="content-side content-side-full content-side-user px-10 align-parent">
                         <!-- Visible only in mini mode -->
                         <div class="sidebar-mini-visible-b align-v animated fadeIn">
-
-                            <img class="img-avatar img-avatar32" src="assets/media/logo.png')}}" alt="">
+                            <img class="img-avatar img-avatar32" src="{{ asset("assets/media/logo.png")}}" alt="">
                         </div>
                         <button type="button" class="btn btn-circle btn-dual-secondary d-lg-none align-v-r" data-toggle="layout" data-action="sidebar_close">
                             <i class="fa fa-times text-danger"></i>
@@ -117,7 +111,7 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-right min-width-200" aria-labelledby="page-header-user-dropdown">
                                 <h5 class="h6 text-center py-10 mb-5 border-b text-uppercase">{{ Auth::user()->name }} {{ Auth::user()->prenoms }}</h5>
-                                <a class="dropdown-item" href="{{route('admin.my_profil')}}">
+                                <a class="dropdown-item" href="#">
                                     <i class="si si-user mr-5"></i> Profil
                                 </a>
 
