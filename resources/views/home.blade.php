@@ -286,12 +286,12 @@
     <script src="{{ asset('temp/assets/js/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js')}}"></script>
     <script src="{{ asset('temp/assets/js/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js')}}"></script>
 
-    <script src="{{ asset('temp/assets/js/plugins/jquery-tags-input/jquery.tagsinput.min.js')}}"></script>
+    {{--<script src="{{ asset('temp/assets/js/plugins/jquery-tags-input/jquery.tagsinput.min.js')}}"></script>
     <script src="{{ asset('temp/assets/js/plugins/jquery-auto-complete/jquery.auto-complete.min.js')}}"></script>
     <script src="{{ asset('temp/assets/js/plugins/masked-inputs/jquery.maskedinput.min.js')}}"></script>
     <script src="{{ asset('temp/assets/js/plugins/ion-rangeslider/js/ion.rangeSlider.min.js')}}"></script>
     <script src="{{ asset('temp/assets/js/plugins/dropzonejs/dropzone.min.js')}}"></script>
-    <script src="{{ asset('temp/assets/js/plugins/flatpickr/flatpickr.min.js')}}"></script>
+    <script src="{{ asset('temp/assets/js/plugins/flatpickr/flatpickr.min.js')}}"></script>--}}
 
     <script src="{{ asset('temp/assets/js/plugins/select2/js/select2.full.min.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
