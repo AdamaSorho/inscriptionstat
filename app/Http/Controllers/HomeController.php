@@ -38,9 +38,9 @@ class HomeController extends Controller
         });
 
         $montant = $inscriptionsPayes->sum("cout");
-        $montantUvci = ($montant * 50) / 100;
-        $montantFortic = ($montant * 25) / 100;
-        $montantTransVie = ($montant * 25) / 100;
+        $montantUvci = ($montant * 40) / 100;
+        $montantTransVie = ($montant * 60) / 100;
+        $montantFortic = ($montantUvci * 5) / 100;
         $titre = "Liste des candidats ayant payé l'inscription à la certification ".$formation->libelle;
 
         return view('home', [
