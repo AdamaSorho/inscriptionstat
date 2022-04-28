@@ -26,8 +26,7 @@
                         <div class="float-left mt-10 d-none d-sm-block">
                             <i class="fa fa-certificate fa-3x text-body-bg-dark"></i>
                         </div>
-{{--                        <div class="font-size-h3 font-w600 js-count-to-enabled">{{$candidatsInscrits->count()}}</div>--}}
-                        <div class="font-size-h3 font-w600 js-count-to-enabled">10</div>
+                        <div class="font-size-h3 font-w600 js-count-to-enabled">{{$candidatsInscrits->count()}}</div>
                         <div class="font-size-sm font-w600 text-uppercase text-muted">Inscrit</div>
                     </div>
                 </a>
@@ -306,9 +305,9 @@
 
     <script>
         $(document).ready(function() {
-            jQuery(function(){
+            /*jQuery(function(){
                 Codebase.helpers('select2' );
-            });
+            });*/
             $("#payesTable").hide();
             $("#inscritsTable").hide();
             $('#candidatPayeTable').DataTable( {
