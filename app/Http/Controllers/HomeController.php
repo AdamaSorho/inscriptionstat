@@ -30,8 +30,9 @@ class HomeController extends Controller
 //        $formation = Formation::where("libelle", "like" . "%" . "art oratoire" . "%")->first();
         $formation = Formation::find(37);
         $candidatsPayes = Inscription::whereIn('id', $paye)
-                                        ->where('formation_id', $formation->formation_id)->get();
-        $candidatsInscrits = Inscription::where('formation_id', $formation->formation_id)->get();
+                                        ->where('formation_id', $formation->id)->get();
+                                        // dd($candidatsPayes);
+        $candidatsInscrits = Inscription::where('formation_id', $formation->id)->get();
 
         $inscriptionsPayes = $candidatsPayes->map(function ($inscription) {
             return ["cout" => $inscription->prixFormation->cout];
