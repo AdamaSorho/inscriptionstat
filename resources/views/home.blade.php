@@ -20,19 +20,20 @@
         {{--@include('flash::message')--}}
         <div class="row js-appear-enabled animated fadeIn" data-toggle="appear">
             <!-- Row #1 -->
-            <div class="col-6 col-xl-3">
-                <a class="block block-link-shadow text-right" href="#" id="buttonInscrits">
+            <div class="col-6 col-xl-3" id="buttonInscrits">
+                <a class="block block-link-shadow text-right" href="#">
                     <div class="block-content block-content-full clearfix">
                         <div class="float-left mt-10 d-none d-sm-block">
                             <i class="fa fa-certificate fa-3x text-body-bg-dark"></i>
                         </div>
-                        <div class="font-size-h3 font-w600 js-count-to-enabled">{{$candidatsInscrits->count()}}</div>
+{{--                        <div class="font-size-h3 font-w600 js-count-to-enabled">{{$candidatsInscrits->count()}}</div>--}}
+                        <div class="font-size-h3 font-w600 js-count-to-enabled">10</div>
                         <div class="font-size-sm font-w600 text-uppercase text-muted">Inscrit</div>
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-xl-3">
-                <a href="#" class="block block-link-shadow text-right" id="buttonPayes">
+            <div class="col-6 col-xl-3" id="buttonPayes">
+                <a href="#" class="block block-link-shadow text-right" >
                     <div class="block-content block-content-full clearfix">
                         <div class="float-left mt-10 d-none d-sm-block">
                             <i class="fa fa-list-alt fa-3x text-body-bg-dark"></i>
@@ -48,7 +49,7 @@
                         <div class="float-left mt-10 d-none d-sm-block">
                             <i class="si si-users fa-3x text-body-bg-dark"></i>
                         </div>
-                        <div class="font-size-h3 font-w600 js-count-to-enabled" >{{$montant}}</div>
+                        <div class="font-size-h3 font-w600 js-count-to-enabled" >{{$montant}} F CFA</div>
                         <div class="font-size-sm font-w600 text-uppercase text-muted">Montant Total</div>
                     </div>
                 </a>
@@ -59,7 +60,7 @@
                         <div class="float-left mt-10 d-none d-sm-block">
                             <i class="si si-wallet fa-3x text-body-bg-dark"></i>
                         </div>
-                        <div class="font-size-h3 font-w600">{{$montantUvci}}</div>
+                        <div class="font-size-h3 font-w600">{{$montantUvci}} F CFA</div>
                         <div class="font-size-sm font-w600 text-uppercase text-muted">Montant UVCI</div>
                     </div>
                 </a>
@@ -70,7 +71,7 @@
                         <div class="float-left mt-10 d-none d-sm-block">
                             <i class="si si-wallet fa-3x text-body-bg-dark"></i>
                         </div>
-                        <div class="font-size-h3 font-w600">{{$montantFortic}}</div>
+                        <div class="font-size-h3 font-w600">{{$montantFortic}} F CFA</div>
                         <div class="font-size-sm font-w600 text-uppercase text-muted">Montant FORTIC</div>
                     </div>
                 </a>
@@ -81,7 +82,7 @@
                         <div class="float-left mt-10 d-none d-sm-block">
                             <i class="si si-wallet fa-3x text-body-bg-dark"></i>
                         </div>
-                        <div class="font-size-h3 font-w600">{{$montantTransVie}}</div>
+                        <div class="font-size-h3 font-w600">{{$montantTransVie}} F CFA</div>
                         <div class="font-size-sm font-w600 text-uppercase text-muted">Montant TransVie</div>
                     </div>
                 </a>
@@ -144,7 +145,7 @@
         <h2 class="content-heading"></h2>--}}
 
         <!-- <p>Content has a max-width set, so on larger screens, the content is boxed (screen width greater than 991px).</p> -->
-        <div class="block" id="payesTable">
+        {{--<div class="block" id="payesTable">
             <div class="block-header block-header-default">
                 <h3 class="block-title" id="titrePaye">Liste des candidats ayant payés</h3>
             </div>
@@ -208,10 +209,10 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div>--}}
         <div class="block" id="inscritsTable">
             <div class="block-header block-header-default">
-                <h3 class="block-title" id="titreInscrits">Liste des candidats non-payés</h3>
+                <h3 class="block-title" id="titreInscrits">Liste des candidats inscrits</h3>
             </div>
             <div class="block-content block-content-full">
                 <!-- DataTables functionality is initialized with .js-dataTable-full-pagination class in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
@@ -326,12 +327,12 @@
                     'copy', 'csv', 'excel', 'pdf', 'print'
                 ]
             } );
-            $("#buttonPayes").onClick(function (e) {
+            $("#buttonPayes").on("click", function (e) {
                 e.preventDefault();
                 $("#payesTable").show();
                 $("#inscritsTable").hide();
             });
-            $("#buttonInscrits").onClick(function (e) {
+            $("#buttonInscrits").on("click", function (e) {
                 e.preventDefault();
                 $("#payesTable").hide();
                 $("#inscritsTable").show();
