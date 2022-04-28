@@ -37,7 +37,7 @@
                         <div class="float-left mt-10 d-none d-sm-block">
                             <i class="fa fa-list-alt fa-3x text-body-bg-dark"></i>
                         </div>
-                        <div class="font-size-h3 font-w600 js-count-to-enabled">{{$candidatsPayes}}</div>
+                        <div class="font-size-h3 font-w600 js-count-to-enabled">{{$candidatsPayes->count()}}</div>
                         <div class="font-size-sm font-w600 text-uppercase text-muted">Payés</div>
                     </div>
                 </a>

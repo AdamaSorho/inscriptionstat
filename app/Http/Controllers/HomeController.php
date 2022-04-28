@@ -30,8 +30,8 @@ class HomeController extends Controller
 //        $formation = Formation::where("libelle", "like" . "%" . "art oratoire" . "%")->first();
         $formation = Formation::find(37);
         $candidatsPayes = Inscription::whereIn('id', $paye)
-                                        ->where('formation_id', $formation->formation_id)->get();
-        $candidatsInscrits = Inscription::where('formation_id', $formation->formation_id)->get();
+                                        ->where('formation_id', $formation->id)->get();
+        $candidatsInscrits = Inscription::where('formation_id', $formation->id)->get();
 
         $inscriptionsPayes = $candidatsPayes->map(function ($inscription) {
             return ["cout" => $inscription->prixFormation->cout];
@@ -41,6 +41,7 @@ class HomeController extends Controller
         $montantUvci = ($montant * 50) / 100;
         $montantFortic = ($montant * 25) / 100;
         $montantTransVie = ($montant * 25) / 100;
+        $titre = "Liste des candidats ayant payé l'inscription à la certification ".$formation->libelle;
 
         return view('home', [
             "formation" => $formation,
@@ -50,6 +51,7 @@ class HomeController extends Controller
             "montantUvci" => $montantUvci,
             "montantFortic" => $montantFortic,
             "montantTransVie" => $montantTransVie,
+            "titre" => $titre,
         ]);
     }
 }
