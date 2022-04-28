@@ -20,8 +20,8 @@
         {{--@include('flash::message')--}}
         <div class="row js-appear-enabled animated fadeIn" data-toggle="appear">
             <!-- Row #1 -->
-            <div class="col-6 col-xl-3" id="buttonInscrits">
-                <a class="block block-link-shadow text-right" href="#">
+            <div class="col-6 col-xl-3">
+                <a class="block block-link-shadow text-right" href="{{ route("inscrits") }}">
                     <div class="block-content block-content-full clearfix">
                         <div class="float-left mt-10 d-none d-sm-block">
                             <i class="fa fa-certificate fa-3x text-body-bg-dark"></i>
@@ -31,8 +31,8 @@
                     </div>
                 </a>
             </div>
-            <div class="col-6 col-xl-3" id="buttonPayes">
-                <a href="#" class="block block-link-shadow text-right" >
+            <div class="col-6 col-xl-3">
+                <a href="{{ route("payes") }}" class="block block-link-shadow text-right" >
                     <div class="block-content block-content-full clearfix">
                         <div class="float-left mt-10 d-none d-sm-block">
                             <i class="fa fa-list-alt fa-3x text-body-bg-dark"></i>
@@ -142,138 +142,6 @@
             </div>
         </div>
         <h2 class="content-heading"></h2>--}}
-
-        <!-- <p>Content has a max-width set, so on larger screens, the content is boxed (screen width greater than 991px).</p> -->
-        {{--<div class="block" id="payesTable">
-            <div class="block-header block-header-default">
-                <h3 class="block-title" id="titrePaye">Liste des candidats ayant payés</h3>
-            </div>
-            <div class="block-content block-content-full">
-                <!-- DataTables functionality is initialized with .js-dataTable-full-pagination class in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
-                <table id="candidatPayeTable" class="table table-bordered table-striped table-responsive">
-                    <thead>
-                    <tr>
-                        <th class="text-center">N°</th>
-                        <th>Nom</th>
-                        <th>Prenoms</th>
-                        <th>Téléphone</th>
-                        <th>Code Paiement</th>
-                        <th>Coût</th>
-                        <th>Type Candidat</th>
-                        <th>Formation</th>
-                        <th>Paiement</th>
-                        <th>Date & Heure Paiement</th>
-                        <!-- <th>Examen</th> -->
-                        <th class="text-center" style="width: 15%;">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @forelse($candidatsPayes as $candidatPaye)
-                        <tr>
-                            <td class="text-center">{{$loop->iteration}}</td>
-                            <td class="font-w600">{{$candidatPaye->nom}}</td>
-                            <td class="text-center">{{$candidatPaye->prenoms}}</td>
-                            <td class="font-w600">{{$candidatPaye->telephone}}</td>
-                            <td class="text-center">{{$candidatPaye->code_paiement}}</td>
-                            <td class="text-center">{{$candidatPaye->prixFormation->cout}}</td>
-                            <td class="font-w600">{{$candidatPaye->typeCandidat->libelle}}</td>
-                            <td class="text-center">{{$candidatPaye->formation->libelle}}</td>
-                            <td class="font-w600">
-                                @php
-                                    $paiement = HelpersVerifPaiement($candidatPaye->code_paiement);
-                                @endphp
-
-                                @if($paiement)
-                                    <span class="badge badge-success">Payé</span>
-                                @else
-                                    <span class="badge badge-danger">Non Payé</span>
-                                @endif
-                            </td>
-                            <td class="text-center">
-                                @if($paiement)
-                                    {{ \Carbon\Carbon::parse($paiement->date_paiement)->format("d/m/Y") }} à {{ $paiement->heure_paiement }}
-                                @endif
-                            </td>
-                            <!-- <td class="font-w600">
-                                <span class="badge badge-warning">Aucun</span>
-                                <span class="badge badge-success">Réussit</span>
-                                <span class="badge badge-danger">Echoué</span>
-                            </td> -->
-                        </tr>
-                    @empty
-                        <tr>
-                            <td class="text-center"colspan="10">Aucune données</td>
-                        </tr>
-                    @endforelse
-                    </tbody>
-                </table>
-            </div>
-        </div>--}}
-        <div class="block" id="inscritsTable">
-            <div class="block-header block-header-default">
-                <h3 class="block-title" id="titreInscrits">Liste des candidats inscrits</h3>
-            </div>
-            <div class="block-content block-content-full">
-                <!-- DataTables functionality is initialized with .js-dataTable-full-pagination class in js/pages/be_tables_datatables.min.js which was auto compiled from _es6/pages/be_tables_datatables.js -->
-                <table id="candidatInscritTable" class="table table-bordered table-striped table-responsive">
-                    <thead>
-                    <tr>
-                        <th class="text-center">N°</th>
-                        <th>Nom</th>
-                        <th>Prénom(s)</th>
-                        <th>Téléphone</th>
-                        <th>Code Paiement</th>
-                        <th>Coût</th>
-                        <th>Type Candidat</th>
-                        <th>Formation</th>
-                        <th>Paiement</th>
-                        <th>Date & Heure Paiement</th>
-                        <!-- <th>Examen</th> -->
-                        <th class="text-center" style="width: 15%;">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @forelse($candidatsInscrits as $candidatInscrit)
-                        <tr>
-                            <td class="text-center">{{$loop->iteration}}</td>
-                            <td class="font-w600">{{$candidatInscrit->nom}}</td>
-                            <td class="text-center">{{$candidatInscrit->prenoms}}</td>
-                            <td class="font-w600">{{$candidatInscrit->telephone}}</td>
-                            <td class="text-center">{{$candidatInscrit->code_paiement}}</td>
-                            <td class="text-center">{{$candidatInscrit->prixFormation->cout}}</td>
-                            <td class="font-w600">{{$candidatInscrit->typeCandidat->libelle}}</td>
-                            <td class="text-center">{{$candidatInscrit->formation->libelle}}</td>
-                            <td class="font-w600">
-                                @php
-                                    $paiement = HelpersVerifPaiement($candidatInscrit->code_paiement);
-                                @endphp
-
-                                @if($paiement)
-                                    <span class="badge badge-success">Payé</span>
-                                @else
-                                    <span class="badge badge-danger">Non Payé</span>
-                                @endif
-                            </td>
-                            <td class="text-center">
-                                @if($paiement)
-                                    {{ \Carbon\Carbon::parse($paiement->date_paiement)->format("d/m/Y") }} à {{ $paiement->heure_paiement }}
-                                @endif
-                            </td>
-                            <!-- <td class="font-w600">
-                                <span class="badge badge-warning">Aucun</span>
-                                <span class="badge badge-success">Réussit</span>
-                                <span class="badge badge-danger">Echoué</span>
-                            </td> -->
-                        </tr>
-                    @empty
-                        <tr>
-                            <td class="text-center" colspan="10">Aucune données</td>
-                        </tr>
-                    @endforelse
-                    </tbody>
-                </table>
-            </div>
-        </div>
     </div>
     <!-- END Page Content -->
 @endsection
@@ -286,12 +154,12 @@
     <script src="{{ asset('temp/assets/js/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js')}}"></script>
     <script src="{{ asset('temp/assets/js/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js')}}"></script>
 
-    {{--<script src="{{ asset('temp/assets/js/plugins/jquery-tags-input/jquery.tagsinput.min.js')}}"></script>
+    <script src="{{ asset('temp/assets/js/plugins/jquery-tags-input/jquery.tagsinput.min.js')}}"></script>
     <script src="{{ asset('temp/assets/js/plugins/jquery-auto-complete/jquery.auto-complete.min.js')}}"></script>
     <script src="{{ asset('temp/assets/js/plugins/masked-inputs/jquery.maskedinput.min.js')}}"></script>
     <script src="{{ asset('temp/assets/js/plugins/ion-rangeslider/js/ion.rangeSlider.min.js')}}"></script>
     <script src="{{ asset('temp/assets/js/plugins/dropzonejs/dropzone.min.js')}}"></script>
-    <script src="{{ asset('temp/assets/js/plugins/flatpickr/flatpickr.min.js')}}"></script>--}}
+    <script src="{{ asset('temp/assets/js/plugins/flatpickr/flatpickr.min.js')}}"></script>
 
     <script src="{{ asset('temp/assets/js/plugins/select2/js/select2.full.min.js')}}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -332,6 +200,7 @@
                 $("#inscritsTable").hide();
             });
             $("#buttonInscrits").on("click", function (e) {
+                console.log("OK");
                 e.preventDefault();
                 $("#payesTable").hide();
                 $("#inscritsTable").show();
