@@ -27,7 +27,7 @@
                             <i class="fa fa-certificate fa-3x text-body-bg-dark"></i>
                         </div>
                         <div class="font-size-h3 font-w600 js-count-to-enabled">{{$candidatsInscrits->count()}}</div>
-                        <div class="font-size-sm font-w600 text-uppercase text-muted">Inscrit</div>
+                        <div class="font-size-sm font-w600 text-uppercase text-muted">Inscrits</div>
                     </div>
                 </a>
             </div>
